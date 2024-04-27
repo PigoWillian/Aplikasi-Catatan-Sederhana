@@ -14,8 +14,8 @@ class PengelolaCatatan {
 
     suspend fun menampilkanDaftarCatatan() {
         println("Daftar Catatan:")
-        notes.forEach { note ->
-            println("Judul: ${note.title}, Isi: ${note.content}")
+        catatan.forEach { catatan ->
+            println("Judul: ${catatan.title}, Isi: ${catatan.content}")
         }
     }
      runBlocking {
