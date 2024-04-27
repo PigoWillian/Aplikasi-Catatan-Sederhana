@@ -11,4 +11,14 @@ class PengelolaCatatan {
             println("${index + 1}. ${catatan.judul}")
         }
     }
+
+    suspend fun menampilkanDaftarCatatan() {
+        println("Daftar Catatan:")
+        notes.forEach { note ->
+            println("Judul: ${note.title}, Isi: ${note.content}")
+        }
+    }
+     runBlocking {
+        daftarCatatan.menampilkanDaftarCatatan()
+    }
 }
