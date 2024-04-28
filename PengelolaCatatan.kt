@@ -1,3 +1,6 @@
+import kotlinx.coroutines.*
+
+
 class PengelolaCatatan {
     private val daftarCatatan = mutableListOf<Catatan>()
 
@@ -12,14 +15,11 @@ class PengelolaCatatan {
         }
     }
 
-    suspend fun menampilkanDaftarCatatan() {
+     suspend fun menampilkanDaftarCatatan() {
         println("Daftar Catatan:")
-        Catatan.forEach { catatan ->
-            println("Judul: ${catatan.title}, Isi: ${catatan.content}")
+        daftarCatatan.forEach { catatan ->
+            println("Judul: ${catatan.judul}, Isi: ${catatan.konten}")
         }
-    }
-     runBlocking {
-        daftarCatatan.menampilkanDaftarCatatan()
     }
 }
 
@@ -31,6 +31,6 @@ fun main() {
     pengelolaCatatan.tambahCatatan(Catatan("Catatan 2", "Isi catatan 2"))
 
     runBlocking {
-        menampilkanDaftarCatatan(pengelolaCatatan)
+        pengelolaCatatan.menampilkanDaftarCatatan()
     }
 }
