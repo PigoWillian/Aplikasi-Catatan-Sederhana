@@ -22,3 +22,15 @@ class PengelolaCatatan {
         daftarCatatan.menampilkanDaftarCatatan()
     }
 }
+
+fun main() {
+
+    val pengelolaCatatan = PengelolaCatatan()
+
+    pengelolaCatatan.tambahCatatan(Catatan("Catatan 1", "Isi catatan 1"))
+    pengelolaCatatan.tambahCatatan(Catatan("Catatan 2", "Isi catatan 2"))
+
+    runBlocking {
+        menampilkanDaftarCatatan(pengelolaCatatan)
+    }
+}
